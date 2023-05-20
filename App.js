@@ -1,21 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { DEFAULT_DARK_THEME } from "./src/theme/DefaultDark.theme";
+import { ThemeProvider } from "./src/theme/Theme.context";
+import Container from "./src/components/Container";
 
-export default function App() {
+export default React.memo(() => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider initial={DEFAULT_DARK_THEME}>
+      <Container />
+    </ThemeProvider>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 });
