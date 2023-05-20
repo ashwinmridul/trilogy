@@ -21,7 +21,7 @@ export default React.memo(() => {
   }, []);
 
   useEffect(() => {
-    if (cards.length < 10) fetchMore(selectedTab);
+    if (cards.length === 1) fetchMore(selectedTab);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTab, cards.length]);
 
